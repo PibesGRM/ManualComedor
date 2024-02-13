@@ -31,6 +31,10 @@
     padding: 10px;
     text-align: center;
     margin-bottom: 20px;
+    width: 300px; /* Reducir el ancho del menú */
+    margin: 0 auto; /* Centrar el menú */
+    display: flex; /* Usar flexbox para centrar elementos */
+    justify-content: space-around; /* Espaciado uniforme entre elementos */
   }
   nav a {
     color: white;
@@ -76,11 +80,34 @@
   <img src="https://i.imgur.com/cREq4At.jpg" alt="Logo del Sitio" width="950" height="250">
 </header>
 <nav>
+  <a href="#" onclick="showPage('home')"> <i class="fas fa-home"></i> Página principal</a>
   <a href="#" onclick="showPage('conceptos')"> <i class="fas fa-book-open"></i> Conceptos básicos</a>
   <a href="#" onclick="showPage('leyes')"> <i class="fas fa-gavel"></i> Leyes</a>
   <a href="#" onclick="showPage('preguntas')"> <i class="fas fa-question-circle"></i> Preguntas frecuentes</a>
 </nav>
 <div class="container" id="pageContent">
+  <div id="home" class="hidden">
+    <div class="section-title">¡Bienvenido a nuestra página!</div>
+    <div class="section-content">
+      <p>Desde los comienzos del ser humano, el hecho de comerse un pollardo siempre ha 
+estado a la orden del día. Ya por vicio o caballerosidad, nunca quedaba una polla 
+sin mamar y nunca pasaba nada. 
+Fue en estos tiempos modernos en los que, con la aparición del movimiento 
+homosexual tal y como lo conocemos, empezó a resultar algo incómodo el 
+deleitarse con un buen tronco y tener que excusarse para que no te etiquetarán de 
+gay. ¿Y digo yo, porque tenemos que privarnos de hacer una práctica que nos 
+apasiona por miedo al qué dirán? Sabemos que estamos en todo nuestro derecho a 
+hacerlo ya que las leyes son claras, ¡Hagámoslo! Pero con cabeza.
+</p>
+      <p>Últimamente estoy viendo que hay mucha gente que tiene dudas en cuanto al 
+número de pollas que puede ingerir en un año sin caer en la desgracia de volverse 
+gay. Buscando por internet, no vi que existiese ninguna guía clara que nos 
+asegurase un buen planning para comernos las correspondientes pollas con total 
+tranquilidad ni unas pautas a seguir, así que he decidido aportar mi granito de 
+arena y hacerla yo mismo con todos sus trucos, reglas y precauciones que ello 
+conlleva. ¡Vamos allá!</p>
+    </div>
+  </div>
   <div id="conceptos" class="hidden">
     <div class="section-title">Conceptos Básicos</div>
     <div class="section-content">
@@ -105,6 +132,11 @@
 </div>
 
 <script>
+  // Esta función se ejecutará al cargar la página para mostrar la sección principal
+  window.onload = function() {
+    showPage('home');
+  };
+
   function showPage(pageName) {
     var pages = document.querySelectorAll('.container > div');
     for (var i = 0; i < pages.length; i++) {
